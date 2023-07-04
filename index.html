@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div id="main" class="d-flex flex-column min-vh-100">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="/">Logo</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-navbar"
+            aria-controls="main-navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle active"
+                  href="#"
+                  id="management-navbar"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-current="page"
+                >
+                  Users
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="management-navbar">
+                  <li>
+                    <a class="dropdown-item" href="#">Information</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item active" href="#">Schedules</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="management-navbar"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-current="page"
+                >
+                  Emails
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="management-navbar">
+                  <li>
+                    <a class="dropdown-item" href="#">Email Types</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Templates</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Body -->
+      <section class="container-fluid">
+        <div class="container">
+          <!-- Breadcrum Users-->
+          <nav aria-label="breadcrumb" class="my-3 d-none">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Users</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Information
+              </li>
+            </ol>
+          </nav>
+          <nav aria-label="breadcrumb" class="my-3">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Users</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Schedules
+              </li>
+            </ol>
+          </nav>
+
+          <!-- Breadcrum Email-->
+          <nav aria-label="breadcrumb" class="my-3 d-none">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Emails</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Email Types
+              </li>
+            </ol>
+          </nav>
+          <nav aria-label="breadcrumb" class="my-3 d-none">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Users</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Templates
+              </li>
+            </ol>
+          </nav>
+
+          <!-- User Table -->
+          <div class="table-responsive py-2 py-md-4 d-none">
+            <table
+              class="table table-striped table-hover caption-top"
+              id="user-table"
+            >
+              <caption>
+                List of users
+              </caption>
+              <thead class="">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>email@gmail.com</td>
+                  <td>
+                    <div class="row g-2">
+                      <div
+                        class="col-6 d-flex justify-content-center align-items-center"
+                      >
+                        <a href="#" class="btn btn-primary w-100">Detail</a>
+                      </div>
+                      <div
+                        class="col-6 d-flex justify-content-center align-items-center"
+                      >
+                        <a href="#" class="btn btn-danger w-100">Remove</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>email@gmail.com</td>
+                  <td>
+                    <div class="row g-2" style="min-width: 120px">
+                      <div class="col-6">
+                        <a href="#" class="btn btn-primary w-100">Detail</a>
+                      </div>
+                      <div class="col-6">
+                        <a href="#" class="btn btn-danger w-100">Remove</a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- User Details -->
+          <div class="row py-2 py-md-4 g-2 g-md-4">
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <form class="row g-4 g-md-2">
+                    <div class="col-12">
+                      <label for="Username" class="form-label">User Name</label>
+                      <input
+                        type="email"
+                        class="form-control text-muted"
+                        id="Username"
+                        aria-describedby="emailHelp"
+                        readonly
+                        value="email@gmail.com"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <label for="FirstName" class="form-label"
+                        >First Name</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control text-muted"
+                        id="FirstName"
+                        readonly
+                        value="Roy"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <label for="LastName" class="form-label">Last Name</label>
+                      <input
+                        type="email"
+                        class="form-control text-muted"
+                        id="LastName"
+                        readonly
+                        value="Le"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <label for="PhoneNumber" class="form-label"
+                        >Phone Number</label
+                      >
+                      <input
+                        type="tel"
+                        class="form-control text-muted"
+                        id="PhoneNumber"
+                        readonly
+                        value="0355341918"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <label for="Email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control text-muted"
+                        id="Email"
+                        readonly
+                        value="email@gmail.com"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="Address" class="form-label">Address</label>
+                      <input
+                        type="text"
+                        class="form-control text-muted"
+                        id="Address"
+                        readonly
+                        value="104 Thanh Thai Street, District 10, HCMC"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="EmailType" class="form-label">
+                        Email Group
+                      </label>
+                      <select
+                        id="EmailType"
+                        class="form-select"
+                        aria-label="email templates"
+                        required
+                      >
+                        <option value="" selected disabled>
+                          -- Select Type --
+                        </option>
+                        <option value="1">Welcome Email</option>
+                        <option value="2">Happy Birth Day</option>
+                        <option value="3">Wellfare</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="EmailTemplate" class="form-label">
+                        Email Template
+                      </label>
+                      <select
+                        id="EmailTemplate"
+                        class="form-select"
+                        aria-label="email templates"
+                        required
+                      >
+                        <option selected value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="SendDate" class="form-label">Send Date</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="SendDate"
+                        title="Send Date"
+                        required
+                      />
+                    </div>
+                    <div class="text-center">
+                      <button
+                        type="submit"
+                        class="btn btn-primary text-uppercase"
+                      >
+                        Add Schedule
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="table-responsive overflow-auto"
+                    style="max-height: 50vh"
+                  >
+                    <table
+                      class="table table-borderless table-hover caption-top"
+                    >
+                      <caption>
+                        List of schedules
+                      </caption>
+                      <thead class="border-bottom">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Template</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Status</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Welcome Email</td>
+                          <td>23/07/2023</td>
+                          <td class="text-success">Success</td>
+                          <td>
+                            <div
+                              class="btn btn-danger"
+                              data-bs-toggle="modal"
+                              data-bs-target="#confirmation-modal"
+                            >
+                              Remove
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Welcome Email</td>
+                          <td>23/07/2023</td>
+                          <td class="text-warning">Waiting</td>
+                          <td>
+                            <div
+                              class="btn btn-danger"
+                              data-bs-toggle="modal"
+                              data-bs-target="#confirmation-modal"
+                            >
+                              Remove
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Welcome Email</td>
+                          <td>23/07/2023</td>
+                          <td class="text-danger">Failure</td>
+                          <td>
+                            <div
+                              class="btn btn-danger"
+                              data-bs-toggle="modal"
+                              data-bs-target="#confirmation-modal"
+                            >
+                              Remove
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-light mt-auto">
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © 2023 Copyright: Roy Le
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </div>
+
+    <!-- Modals -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="confirmation-modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Are you sure?</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. At harum
+            quod recusandae quidem quia qui modi id unde et libero!
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+    <!-- Javascript -->
+    <script src="./js/user.js"></script>
+  </body>
+</html>
