@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 function loadCompanyTable() {
   $("#user-table").DataTable({
-    responsive: true,
     order: [
       [0, "asc"],
       [1, "asc"],

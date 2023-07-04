@@ -1,0 +1,14 @@
+@import "../node_modules/bootstrap/scss/variables";
+
+
+.menu-home-icon {
+   & div:hover {
+    border-color: $primary !important;
+    transition: all 0.3s ease-in-out;
+
+     & img {
+      transform: scale(1.15);
+      transition: all 0.3s ease-in-out;
+     }
+   } 
+}
